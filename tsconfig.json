@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-native",
+    "lib": ["dom", "esnext"],
+    "moduleResolution": "node",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "baseUrl": "./",
+    "paths": {
+      "components": ["./src/components/index.ts"],
+      "pages": ["./src/pages/index.ts"],
+      "types": ["./src/types/index.ts"],
+      "navigation": ["./src/navigation/index.ts"]
+    }
+  }
+}
