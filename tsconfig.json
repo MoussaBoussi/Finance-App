@@ -10,7 +10,7 @@
     "baseUrl": "./",
     "paths": {
       "components": ["./src/components/index.ts"],
-      "pages": ["./src/pages/index.ts"],
+      "screens": ["src/screens/index.ts"],
       "types": ["./src/types/index.ts"],
       "navigation": ["./src/navigation/index.ts"]
     }

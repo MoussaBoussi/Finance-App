@@ -1,1 +1,1 @@
-export { RootStackParamList, ScreenProps } from './Navigation';
+export * from './Navigation';

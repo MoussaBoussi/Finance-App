@@ -1,5 +1,7 @@
+import { FC } from 'react';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RouteProp } from '@react-navigation/native';
+import { HOME, ASSET } from 'navigation';
 
 type RootStackParamList = {
   Home: undefined;
@@ -7,8 +9,15 @@ type RootStackParamList = {
 };
 
 type ScreenProps = {
-  route: RouteProp<RootStackParamList, any>;
-  navigation: StackNavigationProp<RootStackParamList, any>;
+  route: RouteProp<RootStackParamList, typeof RouteList[number]>;
+  navigation: StackNavigationProp<RootStackParamList, typeof RouteList[number]>;
 };
 
-export { RootStackParamList, ScreenProps };
+const RouteList = [HOME, ASSET] as const;
+
+interface iRoute {
+  name: typeof RouteList[number];
+  component: FC;
+}
+
+export { RootStackParamList, ScreenProps, iRoute };

@@ -1,20 +1,21 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { RootStackParamList } from 'types';
-import { Home, Asset } from 'pages';
+import { RootStackParamList, iRoute } from 'types';
+
+import Routes, { HOME } from './Routes';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
 const Navigator: React.FC = () => {
   const { Screen, Navigator } = Stack;
+  const renderRoutes = ({ name, component }: iRoute) => (
+    <Screen name={name} component={component} />
+  );
 
   return (
     <NavigationContainer>
-      <Navigator initialRouteName="Home">
-        <Screen name="Home" component={Home} />
-        <Screen name="Asset" component={Asset} />
-      </Navigator>
+      <Navigator initialRouteName={HOME}>{Routes.map(renderRoutes)}</Navigator>
     </NavigationContainer>
   );
 };
