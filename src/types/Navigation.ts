@@ -1,23 +1,24 @@
 import { FC } from 'react';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { RouteProp } from '@react-navigation/native';
-import { HOME, ASSET } from 'navigation';
+import { HOME, ASSET } from 'screens';
 
 type RootStackParamList = {
   Home: undefined;
   Asset: { name: string };
 };
 
+const RouteList = [HOME, ASSET] as const;
+type RouteName = typeof RouteList[number];
+
 type ScreenProps = {
-  route: RouteProp<RootStackParamList, typeof RouteList[number]>;
-  navigation: StackNavigationProp<RootStackParamList, typeof RouteList[number]>;
+  route: RouteProp<RootStackParamList, RouteName>;
+  navigation: StackNavigationProp<RootStackParamList, RouteName>;
 };
 
-const RouteList = [HOME, ASSET] as const;
-
-interface iRoute {
-  name: typeof RouteList[number];
+interface IRoute {
+  name: RouteName;
   component: FC;
 }
 
-export { RootStackParamList, ScreenProps, iRoute };
+export { RootStackParamList, ScreenProps, IRoute };

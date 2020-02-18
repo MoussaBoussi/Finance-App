@@ -1,12 +1,6 @@
-import { iRoute } from 'types';
-import { Home, Asset } from 'screens';
+import { IRoute } from 'types';
+import { homeRoute, assetRoute } from 'screens';
 
-export const HOME = 'Home';
-export const ASSET = 'Asset';
-
-const Routes: iRoute[] = [
-  { name: HOME, component: Home },
-  { name: ASSET, component: Asset },
-];
+const Routes: IRoute[] = [homeRoute, assetRoute];
 
 export default Routes;

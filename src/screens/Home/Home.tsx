@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Button } from 'react-native-elements';
 import { ScreenProps } from 'types';
-import { ASSET } from 'navigation';
+import { ASSET } from '../Asset';
 
 const Home: FC<ScreenProps> = props => {
   return (
