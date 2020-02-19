@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Button } from 'react-native-elements';
+import { Button } from 'components';
 import { ScreenProps } from 'types';
 import { ASSET } from '../Asset';
 
